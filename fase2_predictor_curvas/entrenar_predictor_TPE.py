@@ -6,8 +6,9 @@ import joblib
 
 
 # LECTURA DE LOS DATOS
-dataset = pd.read_csv('dataset_curvas_pliegues_random.csv')
-resultados_optuna = pd.read_csv('resultados_LSTM_efectoT.csv')
+dataset = pd.read_csv('dataset_curvas_pliegues_TPE_N200.csv')
+resultados_optuna = pd.read_csv('resultados_LSTM_efectoT_TPE.csv')
+
 
 # --- LISTA DE T A ENTRENAR ---
 lista_T = [5, 10, 15, 20]

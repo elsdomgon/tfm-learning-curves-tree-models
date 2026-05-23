@@ -187,7 +187,7 @@ for T in valores_T:
 
     for X_input, nombre in experimentos:
         print(f"Entrenando modelo con: {nombre}, T={T}...")
-        res = lstm_model(X_input, nombre, T, df, y)
+        res = lstm_model(X_input, T, df, y)
         resultados_lista.append(res)
 
 # Convertimos los resultados a dataframe de pandas
@@ -197,7 +197,7 @@ print("\nProceso finalizado")
 # --- CSV PRINCIPAL (media + std) ---
 df_resultados_LSTM = df_resultados.drop(columns=['RMSE_folds', 'MAE_folds', 'MAPE_folds', 'R2_folds'])
 df_resultados_LSTM = df_resultados_LSTM.sort_values(by=['T', 'RMSE'])
-df_resultados_LSTM.to_csv("resultados_LSTM_efectoT.csv", index=False)
+df_resultados_LSTM.to_csv("resultados_LSTM_efectoT_TPE.csv", index=False)
 
 # --- CSV POR FOLDS ---
 filas_folds = []
@@ -214,4 +214,4 @@ for res in resultados_lista:
             'R2': r2
         })
 
-pd.DataFrame(filas_folds).to_csv("resultados_LSTM_folds_efectoT.csv", index=False)
+pd.DataFrame(filas_folds).to_csv("resultados_LSTM_folds_efectoT_TPE.csv", index=False)

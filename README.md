@@ -31,13 +31,11 @@ Este trabajo analiza si dicha estimación puede aprovecharse para construir un *
 
 Los experimentos muestran que es posible anticipar con suficiente fiabilidad el comportamiento final de una combinación de hiperparámetros a partir de pocas iteraciones iniciales. El mecanismo propuesto logra **ahorros computacionales superiores al 60 %** en ambas estrategias de búsqueda, con una **degradación media del rendimiento en torno al 2 %**, lo que representa un compromiso altamente favorable entre la aceleración del proceso y la calidad predictiva resultante.
 
-**Palabras clave:** Optimización de hiperparámetros, aprendizaje automático, potenciación de gradiente, predicción de curvas de aprendizaje, interrupción temprana.
-
 ---
 
 ## Corpus
 
-Los datos provienen de la colección **AutoML Benchmark All Classification (_suite_ 271)** de OpenML, el estándar _de facto_ para la evaluación de sistemas de aprendizaje automático automatizado. Tras aplicar filtros de clasificación binaria y restricciones de tamaño (1.000–50.000 instancias, máximo 350 columnas), se han obtenido **20 conjuntos de datos** finales para la ejecución de los experimentos.
+Los datos provienen de la colección **AutoML Benchmark All Classification (_suite_ 271)** de OpenML, el estándar _de facto_ para la evaluación de sistemas de aprendizaje automático automatizado. Tras aplicar filtros de clasificación binaria y restricciones de tamaño (1.000–50.000 instancias, máximo 350 columnas), se han obtenido **20 conjuntos de datos** finales para la experimentación.
 
 En cada conjunto, se han ejecutado dos estudios de Optuna independientes:
 
@@ -93,7 +91,7 @@ tfm-learning-curves-tree-models/
 └── visualizacion/
     ├── curvas_random.ipynb                   # Visualización de curvas de aprendizaje bajo búsqueda aleatoria
     ├── curvas_TPE.ipynb                      # Visualización de curvas de aprendizaje bajo TPE
-    ├── variable_objetivo.ipynb               # Distribución de la variable objetivo (logloss final) por dataset
+    ├── variable_objetivo.ipynb               # Distribución de la variable objetivo (logloss final) por conjunto de datos
     ├── analisisPreliminarT.ipynb             # Análisis preliminar del rendimiento del predictor según T (en media y por pliegue)
     ├── analisisSensibilidad_random.ipynb     # Espacio ahorro–degradación y efecto de E para el metaconjunto obtenido con búsqueda aleatoria 
     ├── analisisSensibilidad_TPE.ipynb        # Ídem para TPE

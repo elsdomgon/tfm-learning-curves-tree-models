@@ -90,12 +90,15 @@ tfm-learning-curves-tree-models/
 │   ├── analisisSensibilidad_TPE.py           # Ídem para TPE
 │   └── resultados_analisisSensibilidad/      # CSVs con el ahorro de iteraciones y la degradación del rendimiento para cada par (T, E) evaluado (en media y por pliegue)
 │
-└── visualizacion/
-    ├── curvas_random.ipynb                   # Visualización de curvas de aprendizaje bajo búsqueda aleatoria
-    ├── curvas_TPE.ipynb                      # Visualización de curvas de aprendizaje bajo TPE
-    ├── variable_objetivo.ipynb               # Distribución de la variable objetivo (logloss final) por dataset
-    ├── analisisPreliminarT.ipynb             # Análisis preliminar del rendimiento del predictor según T (en media y por pliegue)
-    ├── analisisSensibilidad_random.ipynb   # Espacio ahorro–degradación y efecto de E para el metaconjunto obtenido con búsqueda aleatoria 
-    ├── analisisSensibilidad_TPE.ipynb      # Ídem para TPE
-    └── simulacionPoda.ipynb                # Resultados finales: ahorro e impacto en calidad sobre los 20 conjuntos de datos
+├── visualizacion/
+│   ├── curvas_random.ipynb                   # Visualización de curvas de aprendizaje bajo búsqueda aleatoria
+│   ├── curvas_TPE.ipynb                      # Visualización de curvas de aprendizaje bajo TPE
+│   ├── variable_objetivo.ipynb               # Distribución de la variable objetivo (logloss final) por dataset
+│   ├── analisisPreliminarT.ipynb             # Análisis preliminar del rendimiento del predictor según T (en media y por pliegue)
+│   ├── analisisSensibilidad_random.ipynb     # Espacio ahorro–degradación y efecto de E para el metaconjunto obtenido con búsqueda aleatoria 
+│   ├── analisisSensibilidad_TPE.ipynb        # Ídem para TPE
+│   └── simulacionPoda.ipynb                  # Resultados finales: ahorro e impacto en calidad sobre los 20 conjuntos de datos
+│  
+└── memoria/
+    └── TFM.pdf                               # Memoria compilada (PDF)
 ```

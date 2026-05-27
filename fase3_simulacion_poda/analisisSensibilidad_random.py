@@ -110,15 +110,20 @@ for T in T_vals:
                     coste_real_total       = trial_data['curves_length'].sum()
                     n_iter_real           += coste_real_total
 
-                    # Preparación del input al LSTM
-                    puntos_train = trial_data[[f'train_{j}' for j in range(1, T+1)]].mean().values
-                    puntos_val   = trial_data[[f'val_{j}'   for j in range(1, T+1)]].mean().values
+                    predicciones = []
+                    for _, fila in trial_data.iterrows():
+                        # Preparación del input al LSTM
+                        puntos_train = fila[[f'train_{j}' for j in range(1, T+1)]].values
+                        puntos_val   = fila[[f'val_{j}'   for j in range(1, T+1)]].values
+                        
+                        X_fold   = np.concatenate([puntos_train, puntos_val]).reshape(1, -1)
+                        X_scaled = scaler_cargado.transform(X_fold.reshape(-1, 1)).reshape(X_fold.shape)
+                        X_3d     = np.stack([X_scaled[:, :T], X_scaled[:, T:]], axis=-1)
+                        
+                        pred = modelo_cargado.predict(X_3d, verbose=0).flatten()[0]
+                        predicciones.append(pred)
 
-                    X_trial  = np.concatenate([puntos_train, puntos_val]).reshape(1, -1)
-                    X_scaled = scaler_cargado.transform(X_trial.reshape(-1, 1)).reshape(X_trial.shape)
-                    X_3d     = np.stack([X_scaled[:, :T], X_scaled[:, T:]], axis=-1)
-
-                    pred_logloss = modelo_cargado.predict(X_3d, verbose=0).flatten()[0]
+                    pred_logloss = np.mean(predicciones)  # Media de las predicciones
 
                     # Lógica de poda
                     if i < N:

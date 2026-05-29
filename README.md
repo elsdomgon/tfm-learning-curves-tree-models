@@ -1,5 +1,5 @@
 <p align="center">
-<h1 align="center">Análisis y predicción de curvas de aprendizaje de modelos basados en árboles</h1>
+<h1 align="center">Aceleración de procesos de ajuste de modelos basados en árboles mediante predicción de curvas de aprendizaje</h1>
 </p>
 <p align="center">
     <em>Trabajo Fin de Máster · Máster Universitario en Lógica, Computación e Inteligencia Artificial · Universidad de Sevilla</em>
@@ -16,7 +16,7 @@
 ## Índice
 
 - [Resumen](#resumen)
-- [Corpus](#corpus)
+- [Datos utilizados](#datos-utilzados)
 - [Estructura del repositorio](#estructura-del-repositorio)
 
 ---
@@ -33,7 +33,7 @@ Los experimentos muestran que es posible anticipar con suficiente fiabilidad el 
 
 ---
 
-## Corpus
+## Datos utilizados
 
 Los datos provienen de la colección **AutoML Benchmark All Classification (_suite_ 271)** de OpenML, el estándar _de facto_ para la evaluación de sistemas de aprendizaje automático automatizado. Tras aplicar filtros de clasificación binaria y restricciones de tamaño (1.000–50.000 instancias, máximo 350 columnas), se han obtenido **20 conjuntos de datos** finales para la experimentación.
 

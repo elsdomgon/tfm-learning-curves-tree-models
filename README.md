@@ -16,7 +16,7 @@
 ## Índice
 
 - [Resumen](#resumen)
-- [Datos utilizados](#datos-utilzados)
+- [Datos utilizados](#datos-utilizados)
 - [Estructura del repositorio](#estructura-del-repositorio)
 
 ---
